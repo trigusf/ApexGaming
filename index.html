@@ -7,19 +7,97 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="card bg-base-100 w-96 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Card Title</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
+
+  <!-- navbar -->
+   <section class="bg-[#0a0a0a] fixed navbar py-5 px-5 lg:px-8 flex justify-between z-50">
+      <a href="#" class="font-bold text-2xl">
+        APEX<span class="opacity-65 font-extralight text-sm">gaming</span>
+      </a>
+      <ul class="hidden lg:flex justify-between w-md text-sm font-medium">
+        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Product</a></li>
+        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Categories</a></li>
+        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Best Sellers</a></li>
+        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">About</a></li>
+      </ul>
+
+      <ul class="hidden lg:flex justify-between w-25">
+        <li>
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="hamburger lg:hidden">
+        <label class=" swap swap-rotate">
+          <!-- this hidden checkbox controls the state -->
+          <input type="checkbox" />
+          
+          <!-- hamburger icon -->
+          <svg
+            class="swap-off fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 512 512">
+            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+          </svg>
+        
+          <!-- close icon -->
+          <svg
+            class="swap-on fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 512 512">
+            <polygon
+              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+          </svg>
+        </label>
+      </div>
+   </section>
+
+
+  <!-- end of navbar -->
+
+  <!-- hero -->
+  <div
+  class="hero min-h-screen opacity-100 mask-t-from-50% mask-t-to-100%"
+  style="background-image: url(src/img/background/image.avif);"
+  >
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-neutral-content">
+      <div class="max-w-2xl flex flex-col gap-10 text-center items-center">
+        <p class="uppercase tracking-widest">Precision Engineered</p>
+        <h1 class="mb-5 text-6xl lg:text-8xl font-bold">Elevate Your <span class="text-gray-200">Gaming</span></h1>
+        <p class="mb-5 max-w-xl text-center">
+          Premium peripherals designed for competitive gamers. Experience unmatched precision, durability, and performance.
+        </p>
+        <div class="flex gap-8 items-center">
+          <button class="btn hover:scale-110 bg-white text-black rounded-4xl font-light transition-transform duration-300">Shop Collection <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
+          <button class="btn rounded-4xl font-light hover:bg-secondary">View Catalog</button>   
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- end of hero -->
+
+  <!-- rating 1 -->
+  <div>
+    
+  </div>
+  <!-- end of rating 1 -->
+
 </div>
 </body>
 </html>
