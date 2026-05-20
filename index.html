@@ -72,12 +72,12 @@
 
   <!-- hero -->
   <div
-  class="hero min-h-screen opacity-100 mask-t-from-50% mask-t-to-100%"
+  class="hero min-h-screen opacity-100 mask-t-from-50% mask-t-to-100% mask-b-from-0 mask-b-to-100%"
   style="background-image: url(src/img/background/image.avif);"
   >
     <div class="hero-overlay"></div>
-    <div class="hero-content text-neutral-content">
-      <div class="max-w-2xl flex flex-col gap-10 text-center items-center">
+    <div class="hero-content text-neutral-content min-h-screen pt-24">
+      <div class="max-w-2xl flex flex-col gap-10 text-center items-center h-full">
         <p class="uppercase tracking-widest">Precision Engineered</p>
         <h1 class="mb-5 text-6xl lg:text-8xl font-bold">Elevate Your <span class="text-gray-200">Gaming</span></h1>
         <p class="mb-5 max-w-xl text-center">
@@ -87,16 +87,62 @@
           <button class="btn hover:scale-110 bg-white text-black rounded-4xl font-light transition-transform duration-300">Shop Collection <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
           <button class="btn rounded-4xl font-light hover:bg-secondary">View Catalog</button>   
         </div>
+
+        <!-- rate -->
+        <div class="pt-5 flex lg:justify-between justify-evenly w-full">
+          <div class="flex flex-col text-center">
+            <h1 class="font-bold text-4xl">50K+</h1>
+            <span class="font-extralight text-xs opacity-65">Happy Gamers</span>
+          </div>
+          <div class="flex flex-col text-center">
+            <h1 class="font-bold text-4xl">100+</h1>
+            <span class="font-extralight text-xs opacity-65">Product</span>
+          </div>
+          <div class="flex flex-col text-center">
+            <h1 class="font-bold text-4xl">4.9</h1>
+            <span class="font-extralight text-xs opacity-65">Rating</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
   <!-- end of hero -->
 
-  <!-- rating 1 -->
-  <div>
-    
-  </div>
-  <!-- end of rating 1 -->
+  <!-- new arival -->
+   <div class="flex flex-col justify-center items-center my-14">
+      <div class="max-w-6xl w-full flex flex-col justify-center mb-14">
+        <span class="uppercase opacity-65 text-xs lg:text-sm tracking-widest">Featured</span>
+        <div class="flex justify-between">
+          <h1 class="font-bold text-3xl lg:text-5xl">New Arrivals</h1>
+          <a href="" class="hidden lg:flex items-center gap-3 opacity-65 border py-1 px-3">View All Product <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></a>
+        </div>
+      </div>
+
+      <div class="max-w-6xl w-full flex flex-col justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-4">
+
+                <div class="card bg- w-96 shadow-sm">
+                    <figure>
+                      <img
+                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Card Title</h2>
+                      <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                </div>
+              
+        </div>
+      </div>
+      
+   </div>
+  
+  <!-- end of new arival -->
 
 </div>
 </body>
