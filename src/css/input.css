@@ -6,8 +6,9 @@
 
 
 @theme{
-    --color-primary : #141414; 
+    --color-primary : #1f1f1f; 
     --color-secondary : #1a1a1a;
+    --color-ring : #666666;
 }
 
 *{
