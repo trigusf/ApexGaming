@@ -11,10 +11,15 @@
     --color-ring : #666666;
 }
 
-.logo{
-    @apply lg:grayscale lg:hover:grayscale-0 lg:hover:opacity-100 transition-all duration-300;
-}
 
 *{
     font-family: "Inter", sans-serif;
+}
+
+div ul li a{
+    opacity: 65%;
+}
+
+div ul li a:hover{
+    opacity: 100%;
 }
