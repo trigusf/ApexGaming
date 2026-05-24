@@ -1,11 +1,26 @@
+// navbar & footer
+
+fetch("../src/components/navbar.html").then(response => response.text()).then(data => {
+  document.getElementById("nav").innerHTML = data;
+});
+
+fetch("../src/components/footer.html").then(response => response.text()).then(data => {
+  document.getElementById("footer").innerHTML = data;
+})
+
+// end of navbar & footer
+
+
+
 const newArrivals = document.getElementById('newArrivals');
 newArrivals.innerHTML = products.slice(0, 4).map((item) => {
     return `
-        <div class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
+        <a href="../../detail-product.html?id=${item.id}" class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
             <figure class="overflow-hidden">
               <img
-                src="${item.image1}"
+                src="${item.image[0]}"
                 alt="${item.name}" 
+                loading="lazy"
                 class="aspect-[4/4] object-cover transition-transform duration-300 group-hover:scale-110"/>
             </figure>
             <div class="card-body">
@@ -16,7 +31,7 @@ newArrivals.innerHTML = products.slice(0, 4).map((item) => {
                 <button class="py-1 px-3 rounded-md text-sm lg:text-base opacity-65 hover:opacity-100 hover:bg-ring/20">Add to Cart</button>
               </div>
             </div>
-        </div>`;
+        </a>`;
 }).join("");
 
 
@@ -24,11 +39,12 @@ const bestSellers = document.getElementById('bestSellers');
 bestSellers.innerHTML = products.map((item) => {
   if (item.rate > 4.5) {
     return `
-      <div class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
+      <a href="../../detail-product.html?id=${item.id}" class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
             <figure class="overflow-hidden">
               <img
-                src="${item.image1}"
+                src="${item.image[0]}"
                 alt="${item.name}" 
+                loading="lazy"
                 class="max-w-sx aspect-square object-cover transition-transform duration-300 group-hover:scale-110"/>
             </figure>
             <div class="card-body flex flex-col gap-4">
@@ -47,6 +63,6 @@ bestSellers.innerHTML = products.map((item) => {
                 Add to Cart
               </button>
             </div>  
-      </div>`
+      </a>`
     }
 }).join("")

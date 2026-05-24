@@ -9,64 +9,10 @@
 </head>
 <body>
 
-  <!-- navbar -->
-   <section class="bg-[#0a0a0a] fixed navbar py-5 px-5 lg:px-8 flex justify-between z-50">
-      <a href="#" class="font-bold text-2xl">
-        APEX<span class="opacity-65 font-extralight text-sm">gaming</span>
-      </a>
-      <ul class="hidden lg:flex justify-between w-md text-sm font-medium">
-        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Product</a></li>
-        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Categories</a></li>
-        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">Best Sellers</a></li>
-        <li class="opacity-65 hover:opacity-100"><a href="" class="p-2">About</a></li>
-      </ul>
+<!-- navbar -->
+  <div id="nav">
 
-      <ul class="hidden lg:flex justify-between w-25">
-        <li>
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-          </a>
-        </li>
-      </ul>
-
-      <div class="hamburger lg:hidden">
-        <label class=" swap swap-rotate">
-          <!-- this hidden checkbox controls the state -->
-          <input type="checkbox" />
-          
-          <!-- hamburger icon -->
-          <svg
-            class="swap-off fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 512 512">
-            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-          </svg>
-        
-          <!-- close icon -->
-          <svg
-            class="swap-on fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 512 512">
-            <polygon
-              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-          </svg>
-        </label>
-      </div>
-   </section>
+  </div>
 
 
   <!-- end of navbar -->
@@ -454,76 +400,7 @@
   <!-- end of comment -->
 
   <!-- footer -->
-   <div class="bg-primary/20 border-t-1 border-white/5 p-6 lg:p-8 flex flex-col justify-center items-center">
-      <div class="max-w-6xl w-full border-b-1 border-white/5 pb-8">
-        <div class="flex flex-col lg:flex-row items-center justify-between">
-          <div class="w-full py-8 flex flex-col gap-4">
-            <h1 class="font-bold text-xl lg:text-3xl">Stay in the loop</h1>
-            <p class="text-sm opacity-65">Get exclusive deals, new product announcements, and gaming tips.</p>
-          </div>
-          <div class="w-full">
-            <form action="" class="flex gap-4">
-              <input type="text" placeholder="Enter your Email" class="bg-primary/20 w-full py-1.5 px-4 rounded-4xl inset-shadow-sm">
-              <button type="submit" class="flex py-1.5 px-4 bg-white text-black rounded-4xl cursor-pointer">Subscribe <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="max-w-6xl w-full flex flex-col lg:flex-row justify-between py-8 gap-8 border-b-1 border-white/5">
-        <div class="flex flex-col gap-4">
-          <h1><span class="font-bold text-xl">APEX</span><span class="text-sm font-base opacity-65">gaming</span></h1>
-          <p class="text-sm opacity-65">Premium gaming gear for competitive players. Precision-engineered for peak performance.</p>
-          <ul class="flex gap-4 text-sm">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Tiktok</a></li>
-            <li><a href="#">Youtube</a></li>
-            <li><a href="#">Discord</a></li>
-          </ul>
-        </div>
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-          <div class="flex flex-col gap-4">
-            <h1 class="text-base uppercase font-bold tracking-wider">product</h1>
-            <ul class="text-sm flex flex-col gap-4">
-              <li><a href="#">Keyboard</a></li>
-              <li><a href="#">Mouse</a></li>
-              <li><a href="#">Headset</a></li>
-              <li><a href="#">Accessories</a></li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-4">
-            <h1 class="text-base uppercase font-bold tracking-wider">Support</h1>
-            <ul class="text-sm flex flex-col gap-4">
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Warranty</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">Shiping</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-4">
-            <h1 class="text-base uppercase font-bold tracking-wider">Company</h1>
-            <ul class="text-sm flex flex-col gap-4">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Affiliates</a></li>
-            </ul>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="max-w-6xl py-8 w-full flex flex-col lg:flex-row gap-4 items-center lg:justify-between">
-          <span class="text-sm opacity-65">© 2026 APEX Gaming. All rights reserved.</span>
-          <span class="flex gap-4 text-sm">
-            <a href="#" class="opacity-65 hover:opacity-100">Privacy Policy</a>
-            <a href="#" class="opacity-65 hover:opacity-100">Terms of Service</a>
-          </span>
-      </div>
-   </div>
+  <div id="footer"></div>
   <!-- end of footer -->
 
 

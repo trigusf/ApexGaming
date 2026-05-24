@@ -8,8 +8,10 @@ const products = [
         price: 540000,
         qty: 4,
         rate:4.9,
-        image1: "/src/img/products/ajazz/AK820_1.jpg",
-        image2: "/src/img/products/ajazz/AK820_2.webp"
+        image: [
+            "/src/img/products/ajazz/AK820_1.jpg",
+            "/src/img/products/ajazz/AK820_2.webp"
+        ]
     },
     {
         id: 2,
@@ -20,8 +22,10 @@ const products = [
         desc: "",
         qty: 6,
         rate:4.8,
-        image1: "/src/img/products/ajazz/AK650_1.webp",
-        image2: "/src/img/products/ajazz/AK650_2.webp"
+        image: [
+            "/src/img/products/ajazz/AK650_1.webp",
+            "/src/img/products/ajazz/AK650_2.webp"
+        ]
     },
     {
         id: 3,
@@ -32,8 +36,10 @@ const products = [
         desc: "",
         qty: 2,
         rate:4.6,
-        image1: "/src/img/products/ajazz/AJ159_1.webp",
-        image2: "/src/img/products/ajazz/AJ159_2.webp"
+        image: [
+            "/src/img/products/ajazz/AJ159_1.webp",
+            "/src/img/products/ajazz/AJ159_2.webp"
+        ]
     },
     {
         id: 4,
@@ -44,8 +50,10 @@ const products = [
         desc: "",
         qty: 7,
         rate:4.7,
-        image1: "/src/img/products/ajazz/AJ179_1.webp",
-        image2: "/src/img/products/ajazz/AJ179_2.webp"
+        image: [
+            "/src/img/products/ajazz/AJ179_1.webp",
+            "/src/img/products/ajazz/AJ179_2.webp"
+        ]
     },
     {
         id: 5,
@@ -56,8 +64,10 @@ const products = [
         desc: "",
         qty: 3,
         rate:4.8,
-        image1: "/src/img/products/vortex/GT65_1.jpg",
-        image2: "/src/img/products/vortex/GT65_2.jpg"
+        image: [
+            "/src/img/products/vortex/GT65_1.jpg",
+            "/src/img/products/vortex/GT65_2.jpg"
+        ]
     },
     {
         id: 6,
@@ -68,8 +78,10 @@ const products = [
         desc: "",
         qty: 8,
         rate:4.5,
-        image1: "/src/img/products/vortex/monoseries_1.jpg",
-        image2: ""
+        image: [
+            "/src/img/products/vortex/monoseries_1.jpg",
+            ""
+        ]
     },
     {
         id: 7,
@@ -80,7 +92,9 @@ const products = [
         desc: "",
         qty: 5,
         rate:4.9,
-        image1: "/src/img/products/vortex/onir1_1.webp",
-        image2: "/src/img/products/vortex/onir1_2.jpg"
+        image: [
+            "/src/img/products/vortex/onir1_1.webp",
+            "/src/img/products/vortex/onir1_2.jpg"
+        ]
     }
 ]
