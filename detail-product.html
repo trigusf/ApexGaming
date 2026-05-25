@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/output.css">
-    <title>Document</title>
+    <title></title>
 </head>
 <body>
     <!-- navbar -->
@@ -12,25 +12,87 @@
     <!-- end of navbar -->
 
     <div class="min-h-screen flex justify-center">
-        <div class="w-full pt-18 flex flex-col">
+        <div class="w-full pt-18 flex flex-col">    
             <div class="breadcrumbs text-sm w-full flex justify-center border-y-1 p-4 border-white/10">
                 <ul class="max-w-6xl w-full">
                   <li><a>Home</a></li>
-                  <li><a>Documents</a></li>
-                  <li>Add Document</li>
+                  <li><a>Product</a></li>
+                  <li>Update soon</li>
                 </ul>
             </div>
             <div class="flex justify-center p-4">
                 <div class="max-w-6xl w-full">
-                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
                             <img src="" id="main-img" alt="main-img" class="aspect-[4/4] lg:w-9/12 lg:h-9/12 block object-cover rounded-2xl border border-white/10">
                             <div id="thumbnail-container" class="flex gap-4 mt-5">
 
                             </div>
                         </div>
-                        <div>
-                            <!-- content -->
+                        <div class="">
+                            <div class="flex justify-between text-sm">
+                                <span id="category" class="uppercase tracking-widest opacity-65 text-sm"></span>
+                                <div class="flex gap-4 items-center">
+                                    <span class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="fill-current" viewBox="0 0 640 640">
+                                            <path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="fill-current" viewBox="0 0 640 640">
+                                            <path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="fill-current" viewBox="0 0 640 640">
+                                            <path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="fill-current" viewBox="0 0 640 640">
+                                            <path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        4.9 <span class="opacity-65">(1,234 views)</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex flex-col gap-2 pt-4">
+                                    <h1 id="merk" class="font-bold text-2xl lg:text-4xl"></h1>
+                                    <span class="font-light opacity-65">Lorem ipsum dolor sit amet consectetur.</span>
+                                    <span id="price" class="font-bold text-2xl lg:text-4xl"></span>
+                                    <p class="font-light opacity-65">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut quam ad blanditiis reprehenderit aperiam repudiandae amet, odit quia.</p>
+                                </div>
+                                <div class="flex flex-col w-full lg:flex-row justify-between gap-4">
+                                    <div id="countBtn" class="p-0.5 border border-white/10 w-full flex justify-between items-center rounded-4xl">
+                                        <button id="decreaseBtn" class="w-full h-full rounded-l-2xl cursor-pointer hover:bg-white/5">-</button>
+                                        <label id="countLabel" class="w-full text-center">0</label>
+                                        <button id="increaceBtn" class="w-full h-full rounded-r-2xl cursor-pointer hover:bg-white/5">+</button>
+                                    </div>
+                                    <button class="cursor-pointer w-full flex justify-center items-center p-0.5 bg-white text-black rounded-4xl hover:bg-white/90">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg> add to cart 
+                                    </button>
+                                    <div class="w-full flex gap-4">
+                                        <button id="likeProduct" class="p-2 border border-white/10 rounded-full hover:bg-white hover:text-black">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                                        </button>
+                                        <button id="shareProduct" class="p-2 border border-white/10 rounded-full hover:bg-white hover:text-black">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between w-full gap-4">
+                                    <div class="w-full flex flex-col gap-2 justify-center items-center border border-white/10 py-4 px-2 rounded-xl bg-primary/15 text-white/50 text-xs">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                                        Free Shiping
+                                    </div>
+                                    <div class="w-full flex flex-col gap-2 justify-center items-center border border-white/10 py-4 px-2 rounded-xl bg-primary/15 text-white/50 text-xs">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                                        2 Year Warranty
+                                    </div>
+                                    <div class="w-full flex flex-col gap-2 justify-center items-center border border-white/10 py-4 px-2 rounded-xl bg-primary/15 text-white/50 text-xs">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                                        3-Day Returns
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

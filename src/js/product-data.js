@@ -92,7 +92,7 @@ const products = [
         desc: "",
         qty: 5,
         rate:4.9,
-        image: [
+        image: [    
             "/src/img/products/vortex/onir1_1.webp",
             "/src/img/products/vortex/onir1_2.jpg"
         ]
