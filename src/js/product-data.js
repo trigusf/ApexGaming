@@ -15,7 +15,7 @@ const products = [
     },
     {
         id: 2,
-        name: "KeyboardAjazz AK65",
+        name: "Keyboard Ajazz AK65",
         brand: "Ajazz",
         category: "keyboard",
         price: 860000,

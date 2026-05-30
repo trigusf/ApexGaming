@@ -11,9 +11,21 @@
     --color-ring : #666666;
 }
 
+html{
+    scroll-behavior: auto;
+}
 
 *{
     font-family: "Inter", sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 div ul li a{
