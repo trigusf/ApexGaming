@@ -7,7 +7,7 @@ ApexGaming focuses on creating a modern, responsive, and interactive shopping ex
 
 ## 🚀 Live Demo
 
-(soon)
+https://apexgaming.vercel.app
 
 ---
 
