@@ -20,7 +20,7 @@
 
             <div class="w-full flex flex-col gap-4 lg:flex-row lg:justify-between">
                 <div class="flex gap-4 items-center">
-                    <p class="text-sm opacity-65">18 products</p>
+                    <p class="product-count text-sm opacity-65"></p>
                     <select name="Featured" id="Featured" class="select select-sm w-36 rounded-lg bg-primary/20 border-white/5">
                         <option value="Featured">Featured</option>
                         <option value="newest">Newest</option>
@@ -31,11 +31,11 @@
                 </div>
                 <div class="overflow-x-auto scrollbar-hide">
                     <ul class="flex gap-2">
-                        <li class="text-xs font-medium bg-white text-black p-1.5 px-3 rounded-4xl border border-white/10 hover:opacity-100">All</li>
-                        <li class="text-xs font-medium opacity-65 bg-primary/20 p-1.5 px-3 rounded-4xl border border-white/10 hover:opacity-100">Keyboards</li>
-                        <li class="text-xs font-medium opacity-65 bg-primary/20 p-1.5 px-3 rounded-4xl border border-white/10 hover:opacity-100">Mouse</li>
-                        <li class="text-xs font-medium opacity-65 bg-primary/20 p-1.5 px-3 rounded-4xl border border-white/10 hover:opacity-100">Headsets</li>
-                        <li class="text-xs font-medium opacity-65 bg-primary/20 p-1.5 px-3 rounded-4xl border border-white/10 hover:opacity-100">Accessories</li>
+                        <li class="category-btn category-btn-active" data-category="All">All</li>
+                        <li class="category-btn" data-category="Keyboard">Keyboards</li>
+                        <li class="category-btn" data-category="Mouse">Mouse</li>
+                        <li class="category-btn" data-category="Headset">Headsets</li>
+                        <li class="category-btn" data-category="Accessories">Accessories</li>
                     </ul>
                 </div>
                 

@@ -100,9 +100,15 @@ if (bestSellers) {
 
 const allProduct = document.getElementById('allProduct');
 if (allProduct) {
-  allProduct.innerHTML = products.map((item) => {
+
+  const params = new URLSearchParams(window.location.search)
+  const category = params.get("category");
+
+
+  function renderProducts(data) {
+    allProduct.innerHTML = data.map((item) => {
   return `
-  <a href="../../detail-product.html?id=${item.id}" class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
+      <a href="../../detail-product.html?id=${item.id}" class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
             <figure class="overflow-hidden">
               <img
                 src="${item.image[0]}"
@@ -129,8 +135,55 @@ if (allProduct) {
                 Add to Cart
               </button>
             </div>  
-      </a>
-  `
-}).join("")
-}
+        </a>
+      `
+    }).join("")
+    }
+    renderProducts(products)
 
+    const filteredProduct = category === null ? products : products.filter(item => item.category === category);
+    renderProducts(filteredProduct)
+
+
+    const categoryBtn = document.querySelectorAll(".category-btn");
+
+    categoryBtn.forEach(btn => {
+      btn.addEventListener("click", () => {
+        categoryBtn.forEach(item => {
+          item.classList.remove("category-btn-active");
+        });
+
+        btn.classList.add("category-btn-active");
+
+        const selectedCategory = btn.dataset.category;
+        const filteredProduct = selectedCategory === "All" ? products : products.filter(item => item.category === selectedCategory);
+        renderProducts(filteredProduct);
+      });
+    });
+
+
+
+    
+  }
+  
+
+const productCount = document.querySelector(".product-count");
+productCount.innerHTML = products.length + " Produk";
+
+
+
+// categoryBtn.forEach(btn => {
+//       btn.addEventListener("click", () => {
+
+//         categoryBtn.forEach(item => {
+//           item.classList.remove("category-btn-active");
+//         })
+  
+//         btn.classList.add("category-btn-active");
+
+//         const selectedCategory = btn.dataset.category;
+//         const filteredProduct = selectedCategory === "All" ? products : products.filter(item => item.category === selectedCategory);
+//         renderProducts(filteredProduct);
+
+//       });
+//     });
