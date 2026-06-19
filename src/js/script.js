@@ -104,6 +104,9 @@ if (allProduct) {
   const params = new URLSearchParams(window.location.search)
   const category = params.get("category");
 
+  const productCount = document.querySelector(".product-count");
+  productCount.innerHTML = products.length + " Produk";
+
 
   function renderProducts(data) {
     allProduct.innerHTML = data.map((item) => {
@@ -139,12 +142,15 @@ if (allProduct) {
             </div>  
         </div>
       `
-    }).join("")
+    }).join("");
     }
-    renderProducts(products)
+
+
 
     const filteredProduct = category === null ? products : products.filter(item => item.category === category);
     renderProducts(filteredProduct)
+
+
 
 
     const categoryBtn = document.querySelectorAll(".category-btn");
@@ -160,8 +166,10 @@ if (allProduct) {
         const selectedCategory = btn.dataset.category;
         const filteredProduct = selectedCategory === "All" ? products : products.filter(item => item.category === selectedCategory);
         renderProducts(filteredProduct);
+        setupCartButtons()
       });
     });
+
 
 
 
@@ -169,8 +177,7 @@ if (allProduct) {
   }
   
 
-const productCount = document.querySelector(".product-count");
-productCount.innerHTML = products.length + " Produk";
+
 
 
 
