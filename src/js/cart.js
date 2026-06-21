@@ -28,46 +28,103 @@ function setupCartButtons(){
 setupCartButtons()
 
 
-const cartItems = document.getElementById("cartItem")
+
 
 const cart = getCart();
 console.log(cart)
+const totalOrder = document.getElementById("totalOrder");
+const ifEmtpy = document.getElementById("ifEmpty");
 
-cartItems.innerHTML = cart.map(item => `
-    <div class="card group overflow-hidden relative shadow-sm bg-primary/20 rounded-xl lg:hover:shadow-2xl/30 lg:hover:shadow-primary/50 transition-transform duration-300 hover:scale-101">
-      <a href="../../detail-product.html?id=${item.id}">
-            <figure class="overflow-hidden">
-              <img
-                src="${item.image[0]}"
-                alt="${item.name}" 
-                loading="lazy"
-                class="aspect-square object-cover transition-transform duration-300 group-hover:scale-110"/>
-            </figure>
-            <div class="card-body p-2 lg:p-5 flex flex-col gap-1 md:gap-4 lg:gap-4 text-xs lg:text-base md:text-base">
-              <div class="flex flex-row justify-between items-center">
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="fill-current" viewBox="0 0 640 640">
-                  <path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/>
-                </svg>4.9 
-              </div>
-
-                <span class="lg:text-sm font-thin opacity-65">
-                  (9,999 view)
-                </span>
-              </div>
-              <h1 class="card-title text-sm lg:text-base md:text-base">${item.name}</h1>  
-              <p class="text-xs md:text-base lg:text-base font-bold">Rp ${item.price.toLocaleString("id-ID")}</p>
-            </a>
-              <button data-id="${item.id}" class="add-cart-btn mt-1 flex items-center text-xs md:text-base lg:text-base gap-2 justify-center bg-primary/20 py-1 rounded-4xl hover:bg-primary/90 border border-primary/10 transition-all duration-300 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="h-4 w-4 lg:w-5 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
-                Add to Cart
-              </button>
-            </div>  
-        </div>
+function renderCart(){
+  const cart = getCart();
+  const cartItems = document.getElementById("cartItem") 
+  cartItems.innerHTML = cart.map(item => `
+              <div class="flex items-center w-full h-fit p-4 gap-4 bg-primary/15 rounded-2xl border border-white/5">
+                  <img src="${item.image[0]}" alt="" class="lg:w-30 lg:h-30 w-20 h-20 rounded-xl object-cover">
+                  <div class="w-full flex flex-col gap-2 text-sm lg:text-base">
+                    <span>${item.name}</span>
+                    <span>${item.brand}</span>
+                     <div id="countBtnCart" class="flex items-center text-center w-fit border border-white/15 rounded">
+                        <button id="decreaseBtnCart" class="y-1 px-2 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+                        </button>
+                        <label for="" id="countLabelCart" class="py-1 px-2">1</label>
+                        <button id="increaseBtnCart" class="y-1 px-2 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        </button>
+                      </div>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <span class="font-bold">Rp${item.price.toLocaleString("id-ID")}</span>
+                    <div class="flex gap-2">
+                      <div class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="current-fill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                      </div>
+                      <button id="removeItemCart" onClick="removeItem(${item.id})" class="cursor-pointer hover:text-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="current-fill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
     
     `).join("");
+    
+    const totalHarga = cart.reduce((sum, item) => sum + item.price, 0);
+    const tax  = (totalHarga * 11) / 100;
+    const totalBayar = tax + totalHarga;
 
-   
+    console.log(totalHarga)
+
+    if (cart.length > 0) {
+      ifEmtpy.classList.add("hidden");
+
+      totalOrder.innerHTML = `
+      <div class="relative flex flex-col lg:flex-row gap-4">
+              <div class="sticky">
+                <div class="w-full bg-primary/15 p-8 w-fit rounded-xl border border-white/10">
+                  <h1 class="font-bold text-xl pb-4">Order Summary</h1>
+                  <div class="lg:w-64  flex flex-col gap-4 text-sm">
+                    <div class="w-full flex justify-between">
+                      <span class="text-white/65">Subtotal</span>
+                      <span>Rp${totalHarga.toLocaleString("id-ID")}</span>
+                    </div>
+                    <div class="w-full flex justify-between">
+                      <span class="text-white/65">Shipping</span>
+                      <span class="text-green-500">Free</span>
+                    </div>
+                    <div class="w-full flex justify-between">
+                      <span class="text-white/65">Tax</span>
+                      <span>${tax.toLocaleString("id-ID")}</span>
+                    </div>
+                    <div class="w-full flex justify-between text-xl font-bold border-t border-t-white/10 pt-4">
+                      <span>Total</span>
+                      <span>Rp${totalBayar.toLocaleString("id-ID")}</span>
+                    </div>
+                  </div>
+                  <div class="w-full items-center text-center flex flex-col gap-2 mt-4">
+                    <button class="btn font-thin w-full bg-white text-black rounded-xl">Proceed to Checkout</button>
+                    <a href="all-product.html" class="btn font-thin w-full rounded-xl">Continue Shopping</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      `
+    }
+
+}
+
+renderCart()
+
+function removeItem(id){
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; 
+  cart = cart.filter(item => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+  
+
+    
 
 
 

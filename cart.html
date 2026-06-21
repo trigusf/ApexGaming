@@ -21,8 +21,25 @@
 
 
 <div class="min-h-screen flex justify-center">
-        <div class="w-full max-w-6xl pt-32 flex flex-col p-4 gap-4">
-            <div id="cartItem" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+        <div class="w-full max-w-6xl py-26 flex flex-col p-4 gap-4">
+            <div class="flex flex-col gap-4">
+                <h1 class="font-bold text-4xl">Shopping Cart</h1>
+            </div>
+
+            <div id="ifEmpty" class="flex flex-col items-center justify-center gap-4 h-full text-center">
+              <h1 class="font-bold text-2xl lg:text-4xl">Your cart is empty</h1>
+              <span class="font-thin text-white/65">Start shopping to add items to your Cart</span>
+              <a href="all-product.html" class="btn rounded-xl font-thin">Continue Shopping</a>
+            </div>
+
+            <div class="relative flex flex-col lg:flex-row gap-4">
+
+              <div id="cartItem" class="grid gap-2 w-full lg:p-2 rounded-2xl"></div>
+
+              <div id="totalOrder" class="lg:sticky lg:top-20 lg:self-start"></div>
+
+            </div>
+            
 
         </div>
 </div>
