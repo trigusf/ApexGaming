@@ -16,19 +16,27 @@ function setupCartButtons(){
 
         btn.addEventListener("click", () => {
             const product = products.find(item => item.id === productId);
-
             const cart = getCart();
-            cart.push(product);
+
+            const existingItem = cart.find(item => item.id === product.id);
+
+            if (existingItem) {
+              existingItem.quantity += 1;
+            }else{
+              cart.push({
+                ...product, quantity : 1
+              });
+            }
+
             saveCart(cart);
             console.log(cart);
+
+            updateCartCount();
         })
 
     })
 }
 setupCartButtons()
-
-
-
 
 const cart = getCart();
 console.log(cart)
@@ -45,11 +53,11 @@ function renderCart(){
                     <span>${item.name}</span>
                     <span>${item.brand}</span>
                      <div id="countBtnCart" class="flex items-center text-center w-fit border border-white/15 rounded">
-                        <button id="decreaseBtnCart" class="y-1 px-2 cursor-pointer">
+                        <button id="" data-id="${item.id}" class="decreaseBtnCart y-1 px-2 cursor-pointer">
                           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
                         </button>
-                        <label for="" id="countLabelCart" class="py-1 px-2">1</label>
-                        <button id="increaseBtnCart" class="y-1 px-2 cursor-pointer">
+                        <label for="" id="countLabelCart" class="py-1 px-2">${item.quantity}</label>
+                        <button data-id="${item.id}" class="increaseBtnCart y-1 px-2 cursor-pointer">
                           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                         </button>
                       </div>
@@ -68,12 +76,17 @@ function renderCart(){
                 </div>
     
     `).join("");
+
+   plusQuantity();
+   minQuantity();
+
+
+
+
     
-    const totalHarga = cart.reduce((sum, item) => sum + item.price, 0);
+    const totalHarga = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const tax  = (totalHarga * 11) / 100;
     const totalBayar = tax + totalHarga;
-
-    console.log(totalHarga)
 
     if (cart.length > 0) {
       ifEmtpy.classList.add("hidden");
@@ -109,6 +122,9 @@ function renderCart(){
               </div>
             </div>
       `
+    }else{
+      ifEmtpy.classList.remove("hidden");
+      totalOrder.innerHTML = "";
     }
 
 }
@@ -120,11 +136,55 @@ function removeItem(id){
   cart = cart.filter(item => item.id !== id);
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
+  updateCartCount()
 }
 
-  
 
-    
+function plusQuantity(){
+   const increaseBtnCart = document.querySelectorAll(".increaseBtnCart");
+
+    increaseBtnCart.forEach(btn => {
+      const productId = Number(btn.dataset.id);
+
+      btn.addEventListener("click", () =>{
+      const product = products.find(item => item.id === productId);
+      const cart = getCart()
+
+      const existingItem = cart.find(item => item.id === product.id);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      }
+
+      saveCart(cart);
+      renderCart();
+      updateCartCount();
+
+      });
+    });
+}
+
+function minQuantity(){
+  const increaseBtnCart = document.querySelectorAll(".decreaseBtnCart");
+
+    increaseBtnCart.forEach(btn => {
+      const productId = Number(btn.dataset.id);
+
+      btn.addEventListener("click", () =>{
+      const product = products.find(item => item.id === productId);
+      const cart = getCart()
+
+      const existingItem = cart.find(item => item.id === product.id);
+      if (existingItem.quantity > 1) {
+        existingItem.quantity -= 1;
+      }
+      
+      saveCart(cart);
+      renderCart();
+      updateCartCount();
+
+      });
+    });
+}
 
 
 

@@ -1,7 +1,25 @@
 // navbar & footer
+function updateCartCount(){
+    const totalCart = document.querySelectorAll(".totalCart");
+
+    if (totalCart) {
+      const cart = getCart()
+      const sumCart = cart.reduce((sum, item) => sum + item.quantity, 0)
+    
+      totalCart.forEach(item => {
+        if (sumCart > 99) {
+          item.innerText = "99+";
+        }else{
+          item.innerText = sumCart;
+        }
+      })
+
+    }
+}
 
 fetch("../src/components/navbar.html").then(response => response.text()).then(data => {
   document.getElementById("nav").innerHTML = data;
+  updateCartCount()
 });
 
 fetch("../src/components/footer.html").then(response => response.text()).then(data => {
@@ -32,6 +50,7 @@ counters.forEach(counter => {
   update();
 });
 // end of counter header
+
 
 
 

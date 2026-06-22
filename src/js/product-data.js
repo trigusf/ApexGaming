@@ -6,7 +6,7 @@ const products = [
         category: "Keyboard",
         desc: "",
         price: 540000,
-        qty: 4,
+        stock: 4,
         rate:4.9,
         image: [
             "/src/img/products/ajazz/AK820_1.jpg",
@@ -20,7 +20,7 @@ const products = [
         category: "Keyboard",
         price: 860000,
         desc: "",
-        qty: 6,
+        stock: 6,
         rate:4.8,
         image: [
             "/src/img/products/ajazz/AK650_1.webp",
@@ -34,7 +34,7 @@ const products = [
         category: "Mouse",
         price: 640000,
         desc: "",
-        qty: 2,
+        stock: 2,
         rate:4.6,
         image: [
             "/src/img/products/ajazz/AJ159_1.webp",
@@ -48,7 +48,7 @@ const products = [
         category: "Mouse",
         price: 540000,
         desc: "",
-        qty: 7,
+        stock: 7,
         rate:4.7,
         image: [
             "/src/img/products/ajazz/AJ179_1.webp",
@@ -62,7 +62,7 @@ const products = [
         category: "Keyboard",
         price: 880000,
         desc: "",
-        qty: 3,
+        stock: 3,
         rate:4.8,
         image: [
             "/src/img/products/vortex/GT65_1.jpg",
@@ -76,7 +76,7 @@ const products = [
         category: "Keyboard",
         price: 540000,
         desc: "",
-        qty: 8,
+        stock: 8,
         rate:4.5,
         image: [
             "/src/img/products/vortex/monoseries_1.jpg",
@@ -90,7 +90,7 @@ const products = [
         category: "Mouse",
         price: 370000,
         desc: "",
-        qty: 5,
+        stock: 5,
         rate:4.9,
         image: [    
             "/src/img/products/vortex/onir1_1.webp",
